@@ -25,15 +25,16 @@ h5 {
   font-size:3em;
   font-family: 'Roboto Condensed', sans-serif;
   font-weight: 200;
-
-  
-
 }
+
 
 .name {
   font-size:2em;
   font-family: 'Roboto Condensed', sans-serif;
   font-weight: 500;
+}
+#mainNav .navbar-nav li.nav-item a.nav-link {
+  color: #fff;
 }
 
 footer {
@@ -245,6 +246,7 @@ footer a {
 	 padding: 15px;
 	 background: #328eff;
 	 color: #fff;
+   font-size:1.3em;
 	 margin: -20px -20px 0 -20px;
 	 font-weight: 300;
 	 -webkit-border-radius: 3px 3px 0 0;
