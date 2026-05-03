@@ -1,319 +1,528 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-
-    <!-- Google Font -->
-    <link href="https://fonts.googleapis.com/css?family=Lato:300,400,700" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css?family=Roboto+Condensed:300,400,700" rel="stylesheet">
-
-    <!-- Bootstrap CSS -->
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
-        integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous" />
-
-    <!-- Font Awesome -->
-    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css"
-        integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous" />
-
-    <!-- Custom styles for this template -->
-    <link href="assets/css/app.css" rel="stylesheet" />
-    
-    <title>Saba|Portfolio</title>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>Saba Amin · Data Scientist & AI Engineer</title>
+<link rel="preconnect" href="https://fonts.googleapis.com"/>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,700;0,900;1,700&family=Plus+Jakarta+Sans:wght@300;400;500;600;700&family=Fira+Code:wght@400;500&display=swap" rel="stylesheet"/>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"/>
+<style>
+:root {
+  --white:#ffffff;--off:#f5f6fa;--off2:#eceef6;
+  --ink:#0d0f1c;--ink2:#3a3d52;--muted:#8e92a8;
+  --blue:#1847c2;--blue-lt:#e8edfb;
+  --purple:#6236e0;--pur-lt:#ede8fb;
+  --teal:#0891b2;--teal-lt:#e0f4f9;
+  --green:#059669;--grn-lt:#e0f7ef;
+  --border:#e4e6f0;--radius:16px;
+  --shadow:0 2px 20px rgba(13,15,28,.07);
+  --shadow2:0 8px 40px rgba(13,15,28,.12);
+}
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{font-family:'Plus Jakarta Sans',sans-serif;background:var(--off);color:var(--ink);line-height:1.65;overflow-x:hidden}
+a{color:var(--blue);text-decoration:none}
+a:hover{opacity:.75}
+ 
+/* NAV */
+nav{
+  position:fixed;top:0;left:0;right:0;z-index:900;
+  display:flex;align-items:center;justify-content:space-between;
+  padding:0 40px;height:62px;
+  background:rgba(255,255,255,.9);backdrop-filter:blur(16px);
+  border-bottom:1px solid var(--border);
+}
+.nav-name{font-family:'Playfair Display',serif;font-size:1.05rem;font-weight:700;color:var(--ink)}
+.nav-links{display:flex;gap:4px;list-style:none}
+.nav-links a{
+  font-size:.82rem;font-weight:600;color:var(--ink2);
+  padding:.38rem .85rem;border-radius:99px;
+  transition:background .15s,color .15s;
+}
+.nav-links a:hover{background:var(--blue-lt);color:var(--blue);opacity:1}
+ 
+/* PAGE */
+.page{max-width:1160px;margin:0 auto;padding:86px 22px 60px}
+ 
+/* HERO */
+.hero-card{
+  background:var(--white);border:1px solid var(--border);
+  border-radius:26px;box-shadow:var(--shadow2);
+  padding:56px 60px;
+  display:grid;grid-template-columns:1fr 180px;gap:36px;align-items:center;
+  position:relative;overflow:hidden;margin-bottom:18px;
+}
+.hero-card::before{
+  content:'';position:absolute;right:-100px;top:-100px;
+  width:400px;height:400px;
+  background:radial-gradient(circle,rgba(24,71,194,.07) 0%,transparent 70%);
+  border-radius:50%;pointer-events:none;
+}
+.hero-eyebrow{
+  display:inline-flex;align-items:center;gap:8px;
+  font-family:'Fira Code',monospace;font-size:.72rem;
+  color:var(--blue);background:var(--blue-lt);
+  border:1px solid rgba(24,71,194,.18);
+  border-radius:99px;padding:.28rem 1rem;margin-bottom:18px;
+}
+.hero-eyebrow::before{
+  content:'';width:7px;height:7px;border-radius:50%;
+  background:var(--blue);animation:blink 2s infinite;
+}
+.hero-name{
+  font-family:'Playfair Display',serif;
+  font-size:clamp(2.8rem,5.5vw,4.4rem);
+  font-weight:900;line-height:1.04;color:var(--ink);
+  letter-spacing:-.025em;margin-bottom:10px;
+}
+.hero-name span{color:var(--blue)}
+.hero-role{font-size:1.05rem;font-weight:500;color:var(--ink2);margin-bottom:16px}
+.hero-role b{color:var(--ink)}
+.hero-bio{font-size:.92rem;color:var(--muted);max-width:500px;line-height:1.82;margin-bottom:28px}
+.hero-bio strong{color:var(--ink2)}
+.hero-actions{display:flex;flex-wrap:wrap;gap:10px;align-items:center}
+.btn{
+  display:inline-flex;align-items:center;gap:7px;
+  font-size:.85rem;font-weight:600;border-radius:10px;
+  padding:.66rem 1.4rem;cursor:pointer;border:none;
+  font-family:'Plus Jakarta Sans',sans-serif;
+  transition:transform .18s,box-shadow .18s;
+}
+.btn:hover{transform:translateY(-2px);opacity:1}
+.btn-solid{background:var(--blue);color:#fff;box-shadow:0 4px 16px rgba(24,71,194,.28)}
+.btn-solid:hover{box-shadow:0 8px 28px rgba(24,71,194,.35)}
+.btn-outline{background:var(--white);color:var(--ink2);border:1.5px solid var(--border)}
+.btn-outline:hover{border-color:var(--blue);color:var(--blue)}
+.hero-socials{display:flex;gap:7px;margin-left:2px}
+.hero-socials a{
+  width:36px;height:36px;border-radius:9px;
+  display:flex;align-items:center;justify-content:center;
+  background:var(--off);border:1px solid var(--border);
+  color:var(--ink2);font-size:.95rem;transition:all .18s;
+}
+.hero-socials a:hover{background:var(--blue-lt);color:var(--blue);border-color:rgba(24,71,194,.2);opacity:1;transform:translateY(-2px)}
+.hero-stats{display:flex;flex-direction:column;gap:10px}
+.hstat{
+  background:var(--off);border:1px solid var(--border);
+  border-radius:14px;padding:16px 18px;text-align:center;
+}
+.hstat-num{font-family:'Playfair Display',serif;font-size:1.8rem;font-weight:900;color:var(--blue);line-height:1}
+.hstat-label{font-size:.7rem;color:var(--muted);margin-top:4px;line-height:1.3}
+ 
+/* BENTO ROW */
+.bento-row{display:grid;grid-template-columns:1.3fr 1fr 1fr;gap:14px;margin-bottom:18px}
+.bento{
+  background:var(--white);border:1px solid var(--border);
+  border-radius:var(--radius);padding:26px;box-shadow:var(--shadow);
+}
+.bento-label{font-family:'Fira Code',monospace;font-size:.63rem;letter-spacing:.12em;text-transform:uppercase;color:var(--muted);margin-bottom:8px}
+.bento h3{font-family:'Playfair Display',serif;font-size:1.2rem;color:var(--ink);margin-bottom:9px;line-height:1.22}
+.bento p{font-size:.86rem;color:var(--ink2);line-height:1.75}
+.bento-jhu{background:linear-gradient(135deg,#1847c2 0%,#6236e0 100%);border:none}
+.bento-jhu .bento-label{color:rgba(255,255,255,.6)}
+.bento-jhu h3,.bento-jhu p{color:#fff}
+.bento-jhu p{color:rgba(255,255,255,.82)}
+.jhu-badge{
+  display:inline-block;background:rgba(255,255,255,.18);
+  border:1px solid rgba(255,255,255,.3);border-radius:99px;
+  padding:.24rem .8rem;font-size:.7rem;font-weight:600;color:#fff;margin-top:12px;
+}
+.bento-status{background:var(--grn-lt);border-color:rgba(5,150,105,.2)}
+.status-dot{display:flex;align-items:center;gap:8px;font-size:.85rem;font-weight:600;color:var(--green);margin-bottom:7px}
+.status-dot::before{content:'';width:9px;height:9px;border-radius:50%;background:var(--green);animation:blink 2s infinite}
+.bento-status h3{color:var(--ink);font-size:.98rem;margin:0}
+ 
+/* SKILLS */
+.skills-row{display:grid;grid-template-columns:repeat(5,1fr);gap:13px;margin-bottom:18px}
+.skill-card{
+  background:var(--white);border:1px solid var(--border);
+  border-radius:var(--radius);padding:20px 16px;box-shadow:var(--shadow);
+  transition:transform .18s,box-shadow .18s;
+}
+.skill-card:hover{transform:translateY(-3px);box-shadow:var(--shadow2)}
+.skill-icon{width:38px;height:38px;border-radius:10px;display:flex;align-items:center;justify-content:center;font-size:1rem;margin-bottom:11px}
+.ico-blue{background:var(--blue-lt);color:var(--blue)}
+.ico-purple{background:var(--pur-lt);color:var(--purple)}
+.ico-teal{background:var(--teal-lt);color:var(--teal)}
+.ico-green{background:var(--grn-lt);color:var(--green)}
+.skill-card h5{font-size:.79rem;font-weight:700;color:var(--ink);margin-bottom:8px;letter-spacing:.01em}
+.pills{display:flex;flex-wrap:wrap;gap:5px}
+.pill{
+  font-size:.67rem;font-weight:500;border-radius:6px;
+  padding:.17rem .54rem;background:var(--off2);
+  color:var(--ink2);border:1px solid var(--border);
+}
+ 
+/* SECTION HEADER */
+.section-hdr{display:flex;align-items:center;gap:16px;margin-bottom:18px}
+.section-hdr h2{font-family:'Playfair Display',serif;font-size:1.85rem;font-weight:700;color:var(--ink)}
+.filter-strip{margin-left:auto;display:flex;gap:6px;flex-wrap:wrap}
+.filt{
+  font-size:.78rem;font-weight:600;padding:.3rem .85rem;
+  border-radius:99px;border:1.5px solid var(--border);
+  background:var(--white);color:var(--muted);cursor:pointer;
+  transition:all .15s;font-family:'Plus Jakarta Sans',sans-serif;
+}
+.filt:hover,.filt.on{background:var(--blue);border-color:var(--blue);color:#fff}
+ 
+/* PROJECTS */
+.projects-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:14px;margin-bottom:18px}
+.proj{
+  background:var(--white);border:1px solid var(--border);
+  border-radius:var(--radius);padding:24px;box-shadow:var(--shadow);
+  display:flex;flex-direction:column;gap:11px;
+  transition:transform .2s,box-shadow .2s,border-color .2s;
+}
+.proj:hover{transform:translateY(-4px);box-shadow:var(--shadow2);border-color:rgba(24,71,194,.2)}
+.proj.hide{display:none}
+.proj-head{display:flex;justify-content:space-between;align-items:flex-start}
+.proj-ico{width:42px;height:42px;border-radius:11px;display:flex;align-items:center;justify-content:center;font-size:1rem;flex-shrink:0}
+.proj-tag{
+  font-family:'Fira Code',monospace;font-size:.6rem;
+  letter-spacing:.08em;text-transform:uppercase;
+  color:var(--muted);background:var(--off);
+  border:1px solid var(--border);border-radius:99px;padding:.2rem .65rem;
+}
+.proj h4{font-family:'Playfair Display',serif;font-size:1.02rem;color:var(--ink);line-height:1.25}
+.proj p{font-size:.82rem;color:var(--muted);line-height:1.75;flex:1}
+.proj-pills{display:flex;flex-wrap:wrap;gap:5px}
+.proj-link{display:inline-flex;align-items:center;gap:5px;font-size:.79rem;font-weight:600;color:var(--blue)}
+.proj-link i{font-size:.78rem}
+ 
+/* EDUCATION */
+.edu-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:13px;margin-bottom:18px}
+.edu-card{
+  background:var(--white);border:1px solid var(--border);
+  border-radius:var(--radius);padding:22px;box-shadow:var(--shadow);
+  display:flex;flex-direction:column;gap:7px;
+  transition:transform .18s;
+}
+.edu-card:hover{transform:translateY(-3px)}
+.edu-year{font-family:'Fira Code',monospace;font-size:.68rem;color:var(--muted);letter-spacing:.08em}
+.edu-card h4{font-size:.93rem;font-weight:700;color:var(--ink);line-height:1.3}
+.edu-card span{font-size:.81rem;color:var(--muted)}
+.badge{display:inline-block;font-size:.67rem;font-weight:600;padding:.17rem .6rem;border-radius:99px;margin-top:2px;width:fit-content}
+.badge-now{background:var(--blue-lt);color:var(--blue)}
+.badge-dl{background:var(--grn-lt);color:var(--green)}
+.edu-card.featured{background:linear-gradient(135deg,#1847c2,#6236e0);border:none}
+.edu-card.featured .edu-year{color:rgba(255,255,255,.6)}
+.edu-card.featured h4{color:#fff}
+.edu-card.featured span{color:rgba(255,255,255,.75)}
+ 
+/* CONTACT */
+.contact-strip{
+  background:var(--white);border:1px solid var(--border);
+  border-radius:var(--radius);padding:44px 52px;box-shadow:var(--shadow);
+  display:flex;align-items:center;justify-content:space-between;gap:28px;flex-wrap:wrap;
+}
+.contact-left h2{font-family:'Playfair Display',serif;font-size:1.8rem;font-weight:700;color:var(--ink);margin-bottom:5px}
+.contact-left p{font-size:.88rem;color:var(--muted);max-width:360px}
+.contact-btns{display:flex;gap:10px;flex-wrap:wrap}
+ 
+footer{text-align:center;padding:30px;font-family:'Fira Code',monospace;font-size:.73rem;color:var(--muted)}
+ 
+@keyframes blink{0%,100%{opacity:1}50%{opacity:.2}}
+.reveal{opacity:0;transform:translateY(18px);transition:opacity .5s ease,transform .5s ease}
+.reveal.in{opacity:1;transform:translateY(0)}
+ 
+@media(max-width:960px){
+  .hero-card{grid-template-columns:1fr;padding:34px}
+  .hero-stats{flex-direction:row}
+  .bento-row{grid-template-columns:1fr 1fr}
+  .skills-row{grid-template-columns:repeat(3,1fr)}
+  .projects-grid{grid-template-columns:1fr 1fr}
+  .edu-grid{grid-template-columns:1fr 1fr}
+}
+@media(max-width:640px){
+  nav{padding:0 16px}.nav-links{display:none}
+  .page{padding:74px 14px 40px}
+  .hero-card{padding:26px 18px}
+  .bento-row,.skills-row{grid-template-columns:1fr}
+  .projects-grid,.edu-grid{grid-template-columns:1fr}
+  .contact-strip{padding:26px 20px}
+  .section-hdr{flex-direction:column;align-items:flex-start}
+}
+</style>
 </head>
-
 <body>
-    <!-- Navbar -->
-    <nav class="navbar navbar-expand-lg bg-dark fixed-top text-uppercase" id="mainNav">
-        <div class="container">
-            <button class="navbar-toggler navbar-toggler-right text-uppercase text-white rounded" type="button"
-                data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive"
-                aria-expanded="false" aria-label="Toggle navigation">
-                <i class="fas fa-bars"></i>
-            </button>
-            <div class="collapse navbar-collapse" id="navbarResponsive">
-                <ul class="navbar-nav ml-auto">
-                    <li class="nav-item">
-                        <a class="nav-link" href="machine.html">ML_Portfolio</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="https://unraveldatascience.com/">website</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="#education"></a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="#connect"></a>
-                    </li>
-                </ul>
-            </div>
-        </div>
-    </nav>
-    <header>
-        <div class="wave">
-            <div class="container header-container">
-                <h1 class="name">Hi, I'm Saba Amin.</h1>
-                <h3 class="subtitle text-center">Data Science Analyst/Engineer</h3>
-                <div class="icons-div">
-                    <span><i class='bx bxs-user'></i></span>
-                    <span><i class='bx bxs-phone' ></i></span>
-                    <span><i class='bx bxs-envelope'></i></span>
-                </div>
-               
-                <!-- <img src="assets/images/student.png" class="boy" alt="boy image" /> -->
-            </div>
-        </div>
-        <div class="wave-svg">
-            <svg xmlns="http://www.w3.org/2000/svg" fill="#fff" opacity="1" width="100%" height="80"
-                preserveAspectRatio="none" viewBox="0 0 1600 200">
-                <path d="M-8,95.3C-8,95.3,189,2,398,2s604,184.7,800,184.7s412-91.4,412-91.4V271H-8V95.3z" />
-                <path
-                    d="M1610,95.3c0,0-216,80-412,80c-98,0-245.8-40.5-395.1-80.9c149.4,46.2,297.1,92.3,395.1,92.3C1394,186.7,1610,95.3,1610,95.3z" />
-            </svg>
-        </div>
-    </header>
-	<script src="https://unpkg.com/ionicons@5.4.0/dist/ionicons.js"></script>
-    <section class="container">
-        <h1 class="title">Thanks for stopping by!!!
-        </h1>
-        <h3 class="subtitle"><b>I strongly believe that if you work hard and have self-confidence,
-             you can achieve anything you want. If you set your mind to something and put in 
-             the effort, you will eventually reach your goal. So never give up on yourself 
-             and always believe in your own abilities. I am feeling so proud of myself! I have 
-             worked so hard to get to where I am today, and I am finally starting to see the fruits 
-             of my labor. It feels amazing to be able to look back on all of the progress I have made, 
-             and I am so excited to see what the future holds. 
-             I am so grateful for all of the opportunities I have been given, 
-             and I am determined to make the most of them. 
-             <br><I>** I know that there will be challenges along the way, but I am ready to face them head-on. 
-             I am confident in my ability to overcome any obstacle that comes my way, 
-             and I am excited to see what the future holds.**</i>
-             </h3>
-    </section>
-
-
-    
-     <div class="wave-svg-color">
-        <svg xmlns="http://www.w3.org/2000/svg" fill="#328eff" opacity="1" width="100%" height="80"
-            preserveAspectRatio="none" viewBox="0 0 1600 200">
-            <path d="M-8,95.3C-8,95.3,189,2,398,2s604,184.7,800,184.7s412-91.4,412-91.4V271H-8V95.3z" />
-            <path
-                d="M1610,95.3c0,0-216,80-412,80c-98,0-245.8-40.5-395.1-80.9c149.4,46.2,297.1,92.3,395.1,92.3C1394,186.7,1610,95.3,1610,95.3z" />
-        </svg>
+ 
+<nav>
+  <div class="nav-name">Saba Amin</div>
+  <ul class="nav-links">
+    <li><a href="#about">About</a></li>
+    <li><a href="#skills">Skills</a></li>
+    <li><a href="#projects">Projects</a></li>
+    <li><a href="#education">Education</a></li>
+    <li><a href="#contact">Contact</a></li>
+  </ul>
+</nav>
+ 
+<div class="page">
+ 
+<!-- HERO -->
+<div class="hero-card reveal">
+  <div>
+    <div class="hero-eyebrow">Open to new roles &nbsp;·&nbsp; NJ / Remote</div>
+    <h1 class="hero-name">Saba <span>Amin</span></h1>
+    <p class="hero-role"><b>Data Scientist</b> &amp; Machine Learning Engineer</p>
+    <p class="hero-bio">
+      Turning raw data into real business decisions through predictive modeling,
+      ETL pipelines, and production ML. Currently deepening expertise in
+      <strong>Generative &amp; Agentic AI</strong> at
+      <strong>Johns Hopkins University</strong>.
+    </p>
+    <div class="hero-actions">
+      <a class="btn btn-solid" href="#projects"><i class="fas fa-layer-group"></i> View Projects</a>
+      <a class="btn btn-outline" href="#contact"><i class="fas fa-paper-plane"></i> Contact Me</a>
+      <div class="hero-socials">
+        <a href="https://github.com/Wamuza1" target="_blank"><i class="fab fa-github"></i></a>
+        <a href="https://www.linkedin.com/in/sabaamin-atta/" target="_blank"><i class="fab fa-linkedin"></i></a>
+        <a href="mailto:onetreesaba@gmail.com"><i class="fas fa-envelope"></i></a>
+      </div>
     </div>
-
-    <section class="container-color">
-    </section>
-    <section class="container">
-        <div class="card custom-card">
-            <div class="card-body">
-                <span class="card-icon">
-                    <i class="fas fa-code"></i>
-                </span>
-
-                <h3 class="card-title"><b>More about Me</b></h3>
-                <p class="card-text"><b>Analytical Data Scientist leveraging extensive working, academic 
-                    and bootcamp experience to produce quantitative insights for real-world business problems. 
-                    Ambitious learner, constantly enrolling in challenging programs to analyze, 
-                    interpret and present crucial findings from structured, unstructured and semi-structured data sets of all sizes.
-                     Excels in areas such as statistical and predictive analysis using Machine Learning. </b> </p>
-                <h5 class="card-title">
-                    <i class="fas fa-code"></i>
-                </h5>
-                <p class="card-text">
-                    
-                </p>
-            </div>
-        </div>
-    </section>
-
-    <!-- TIMELINE -->
-    <section class="container">
-        <h1 class="title">Projects</h1>
-        <h3 class="subtitle"></h3>
-    </section>
-     <div class="container">
-        <div id="timeline">
-            <div class="timeline-item">
-                <div class="timeline-icon">
-                    <i class="fas fa-star fa-align"></i>
-
-                </div>
-                <div class="timeline-content">
-                    <h2>Data Visualization</h2>
-                    <p>
-                        <br> A Tableau analysis of CitiBike data to transplant the idea to a new city.
-                    
-                        <br> Using the peak summer data, insightful visualizations have been created for an investor 
-                        presentation to demonstrate when the bike sharing program would have the most active ridership 
-                        and who would use the bike sharing program. This helps investors make informed decisions
-                         about when to invest in the program, and when to expect the highest levels of ridership 
-                         to maximize profits.
-                    </p> Tools: Tableau
-                </p>
-                    <a href="https://github.com/Wamuza1/bikeSharing" class="btn"><i class="fab fa-github"></i> Code</a>
-                    
-                </div>
-            </div>
-
-            <div class="timeline-item">
-                <div class="timeline-icon">
-                    <i class="fas fa-star fa-align"></i>
-
-                </div>
-                <div class="timeline-content right">
-                    <h2>Statistical analysis</h2>
-                    <p>
-                        A statistical study to compare vehicle performance of the MechaCar vehicles against vehicles from other manufacturers by using RStudio. 
-                        The analysis provides the manufacturing team with valuable insight to make informed decisions and improve the production process.
-                        </p>Tools: R, RStudio, T-Testing, Multiple Linear regression
-                    </p>
-                    <a href=" https://github.com/Wamuza1/MechaCar_Statistical_Analysis" class="btn"><i class="fab fa-github"></i> Code</a>
-                    
-                </div>
-            </div>
-
-            <div class="timeline-item">
-                <div class="timeline-icon">
-                    <i class="fas fa-star fa-align"></i>
-                </div>
-                <div class="timeline-content">
-                    <h2>Big Data</h2>
-                    <p>
-                         Extract, Transform, and Load(ETL) Analysis on Amazon reviews written by paid v nonpaid members to determine the bias of favorable vine reviews. </br>
-                      
-                    </p>Tools: PySpark, Google Colab, PgAdmin, AWS RDS, S3
-                    <a href="https://github.com/Wamuza1/Amazon_Vine_Analysis" class="btn"><i class="fab fa-github"></i> Code</a>
-                   
-
-                </div>
-            </div>
-
-            <div class="timeline-item">
-                <div class="timeline-icon">
-                    <i class="fas fa-star fa-align"></i>
-
-                </div>
-                <div class="timeline-content right">
-                    <h2>Mission_to_Mars</h2>
-                    <p>
-                        Single Page Application: This project showcased the development of a website application using the Flask framework,
-                         as a custom interface to share and format scraped data
-                         
-                    </p>Tools: Jputer notebook, Vscode, Flask, BeautifulSoup, splinter, Pandas, MongoDB
-                </p>
-                    <a href=" https://github.com/Wamuza1/Mission_to_Mars" class="btn"><i class="fab fa-github"></i> Code</a>
-                   
-                </div>
-            </div>
-
-            <div class="timeline-item">
-                <div class="timeline-icon">
-                    <i class="fas fa-star fa-align"></i>
-                </div>
-                <div class="timeline-content">
-                    <h2>Pewlett Hackard Employee Databases</h2>
-                    <p>
-                       The purpose of the analysis was to identify the number of near retirement
-                        employees by job title and identify eligible employees to participate in a mentorship program.
-                       
-                    </p> Tools: PostgreSQL 
-                </p>
-                    <a href="https://github.com/Wamuza1/Pawlett-Hackard-Analysis" class="btn"><i class="fab fa-github"></i> Code</a>
-                    
-                </div>
-            </div>
-        </div>
+  </div>
+  <div class="hero-stats">
+    <div class="hstat"><div class="hstat-num">12+</div><div class="hstat-label">GitHub Projects</div></div>
+    <div class="hstat"><div class="hstat-num">3+</div><div class="hstat-label">Years Experience</div></div>
+    <div class="hstat"><div class="hstat-num">BBA</div><div class="hstat-label">Rutgers Univ.</div></div>
+  </div>
+</div>
+ 
+<!-- ABOUT BENTO -->
+<div id="about" class="bento-row reveal">
+  <div class="bento">
+    <div class="bento-label">// About Me</div>
+    <h3>Analytical mind, data-driven results.</h3>
+    <p>Full analytics lifecycle — from wrangling messy datasets and ETL pipelines to training ML models and presenting insights to stakeholders. My background bridges business strategy with hands-on technical execution.</p>
+  </div>
+  <div class="bento bento-jhu">
+    <div class="bento-label">// Currently Enrolled</div>
+    <h3>Johns Hopkins University</h3>
+    <p>Generative &amp; Agentic AI Program — LLMs, autonomous agents, RAG pipelines, and production AI systems.</p>
+    <span class="jhu-badge"><i class="fas fa-graduation-cap"></i>&nbsp; In Progress · 2025</span>
+  </div>
+  <div class="bento bento-status">
+    <div class="status-dot">Available for Work</div>
+    <h3>Open to Data Scientist, ML Engineer &amp; AI roles in NJ or Remote.</h3>
+  </div>
+</div>
+ 
+<!-- SKILLS -->
+<div id="skills" class="section-hdr reveal"><h2>Technical Skills</h2></div>
+<div class="skills-row reveal">
+  <div class="skill-card">
+    <div class="skill-icon ico-blue"><i class="fas fa-code"></i></div>
+    <h5>Languages</h5>
+    <div class="pills"><span class="pill">Python</span><span class="pill">R</span><span class="pill">SQL</span><span class="pill">NoSQL</span><span class="pill">JavaScript</span></div>
+  </div>
+  <div class="skill-card">
+    <div class="skill-icon ico-purple"><i class="fas fa-robot"></i></div>
+    <h5>Machine Learning</h5>
+    <div class="pills"><span class="pill">Scikit-learn</span><span class="pill">TensorFlow</span><span class="pill">Neural Nets</span><span class="pill">Time Series</span><span class="pill">Clustering</span></div>
+  </div>
+  <div class="skill-card" style="border-color:rgba(24,71,194,.2)">
+    <div class="skill-icon ico-blue"><i class="fas fa-microchip"></i></div>
+    <h5>Generative AI <span style="color:var(--blue);font-weight:400;font-size:.6rem">(JHU)</span></h5>
+    <div class="pills"><span class="pill">LLMs</span><span class="pill">RAG</span><span class="pill">AI Agents</span><span class="pill">LangChain</span><span class="pill">Prompt Eng.</span></div>
+  </div>
+  <div class="skill-card">
+    <div class="skill-icon ico-teal"><i class="fas fa-database"></i></div>
+    <h5>Data Engineering</h5>
+    <div class="pills"><span class="pill">PySpark</span><span class="pill">AWS</span><span class="pill">PostgreSQL</span><span class="pill">MongoDB</span><span class="pill">ETL</span></div>
+  </div>
+  <div class="skill-card">
+    <div class="skill-icon ico-green"><i class="fas fa-tools"></i></div>
+    <h5>Tools &amp; Platforms</h5>
+    <div class="pills"><span class="pill">Tableau</span><span class="pill">Jupyter</span><span class="pill">Flask</span><span class="pill">Pandas</span><span class="pill">GitHub</span></div>
+  </div>
+</div>
+ 
+<!-- PROJECTS -->
+<div id="projects" class="section-hdr reveal">
+  <h2>Projects</h2>
+  <div class="filter-strip">
+    <button class="filt on" data-f="all">All</button>
+    <button class="filt" data-f="ml">Machine Learning</button>
+    <button class="filt" data-f="data">Data Engineering</button>
+    <button class="filt" data-f="ai">AI / Deep Learning</button>
+    <button class="filt" data-f="viz">Visualization</button>
+  </div>
+</div>
+ 
+<div class="projects-grid reveal">
+  <div class="proj" data-c="viz">
+    <div class="proj-head"><div class="proj-ico ico-blue"><i class="fas fa-chart-bar"></i></div><span class="proj-tag">Visualization</span></div>
+    <h4>CitiBike Sharing Analysis</h4>
+    <p>Tableau analysis of peak-season CitiBike data to pitch a bike-sharing program to new-city investors with ridership &amp; profitability insights.</p>
+    <div class="proj-pills"><span class="pill">Tableau</span></div>
+    <a class="proj-link" href="https://github.com/Wamuza1/bikeSharing" target="_blank"><i class="fab fa-github"></i> GitHub</a>
+  </div>
+  <div class="proj" data-c="data">
+    <div class="proj-head"><div class="proj-ico ico-purple"><i class="fas fa-flask"></i></div><span class="proj-tag">Statistics</span></div>
+    <h4>MechaCar Statistical Analysis</h4>
+    <p>Multiple linear regression &amp; T-testing comparing MechaCar performance vs. competitors to guide manufacturing decisions.</p>
+    <div class="proj-pills"><span class="pill">R</span><span class="pill">RStudio</span><span class="pill">T-Testing</span></div>
+    <a class="proj-link" href="https://github.com/Wamuza1/MechaCar_Statistical_Analysis" target="_blank"><i class="fab fa-github"></i> GitHub</a>
+  </div>
+  <div class="proj" data-c="data">
+    <div class="proj-head"><div class="proj-ico ico-blue"><i class="fas fa-database"></i></div><span class="proj-tag">Big Data / ETL</span></div>
+    <h4>Amazon Vine Review ETL</h4>
+    <p>PySpark ETL pipeline into AWS RDS detecting bias between paid vs. non-paid Amazon Vine reviewers.</p>
+    <div class="proj-pills"><span class="pill">PySpark</span><span class="pill">AWS RDS</span><span class="pill">S3</span></div>
+    <a class="proj-link" href="https://github.com/Wamuza1/Amazon_Vine_Analysis" target="_blank"><i class="fab fa-github"></i> GitHub</a>
+  </div>
+  <div class="proj" data-c="data">
+    <div class="proj-head"><div class="proj-ico ico-teal"><i class="fas fa-rocket"></i></div><span class="proj-tag">Web Scraping</span></div>
+    <h4>Mission to Mars App</h4>
+    <p>Flask single-page app scraping live Mars mission data with BeautifulSoup &amp; Splinter, stored in MongoDB.</p>
+    <div class="proj-pills"><span class="pill">Flask</span><span class="pill">BeautifulSoup</span><span class="pill">MongoDB</span></div>
+    <a class="proj-link" href="https://github.com/Wamuza1/Mission_to_Mars" target="_blank"><i class="fab fa-github"></i> GitHub</a>
+  </div>
+  <div class="proj" data-c="data">
+    <div class="proj-head"><div class="proj-ico ico-green"><i class="fas fa-users"></i></div><span class="proj-tag">SQL / Database</span></div>
+    <h4>Pewlett Hackard Employee DB</h4>
+    <p>PostgreSQL analysis identifying near-retirement employees by title and building a mentorship-eligibility pipeline.</p>
+    <div class="proj-pills"><span class="pill">PostgreSQL</span><span class="pill">ERD Design</span></div>
+    <a class="proj-link" href="https://github.com/Wamuza1/Pawlett-Hackard-Analysis" target="_blank"><i class="fab fa-github"></i> GitHub</a>
+  </div>
+  <div class="proj" data-c="ml">
+    <div class="proj-head"><div class="proj-ico ico-blue"><i class="fas fa-coins"></i></div><span class="proj-tag">Unsupervised ML</span></div>
+    <h4>Cryptocurrency Clustering</h4>
+    <p>PCA + K-Means grouping of tradeable cryptos into distinct investor profiles for market entry decisions.</p>
+    <div class="proj-pills"><span class="pill">K-Means</span><span class="pill">PCA</span><span class="pill">Scikit-learn</span></div>
+    <a class="proj-link" href="https://github.com/Wamuza1/Cryptocurrencies" target="_blank"><i class="fab fa-github"></i> GitHub</a>
+  </div>
+  <div class="proj" data-c="ml">
+    <div class="proj-head"><div class="proj-ico ico-purple"><i class="fas fa-shield-alt"></i></div><span class="proj-tag">Classification</span></div>
+    <h4>Insurance Fraud Detection</h4>
+    <p>Binary classifier flagging fraudulent auto insurance claims before payout, reducing company losses.</p>
+    <div class="proj-pills"><span class="pill">Classification</span><span class="pill">Scikit-learn</span><span class="pill">Python</span></div>
+    <a class="proj-link" href="https://github.com/Wamuza1/Fraud_Detection_Analysis" target="_blank"><i class="fab fa-github"></i> GitHub</a>
+  </div>
+  <div class="proj" data-c="ml">
+    <div class="proj-head"><div class="proj-ico ico-teal"><i class="fas fa-shopping-cart"></i></div><span class="proj-tag">Association Rules</span></div>
+    <h4>Market Basket Analysis</h4>
+    <p>Apriori mining revealing co-purchase patterns for smarter product placement and cross-sell strategies.</p>
+    <div class="proj-pills"><span class="pill">Apriori</span><span class="pill">Association Rules</span></div>
+    <a class="proj-link" href="https://github.com/Wamuza1/Market_Basket_Analysis" target="_blank"><i class="fab fa-github"></i> GitHub</a>
+  </div>
+  <div class="proj" data-c="ml">
+    <div class="proj-head"><div class="proj-ico ico-green"><i class="fas fa-vial"></i></div><span class="proj-tag">A/B Testing</span></div>
+    <h4>Program Evaluation</h4>
+    <p>A/B testing framework measuring user engagement across programs with predictive model for business recommendations.</p>
+    <div class="proj-pills"><span class="pill">A/B Testing</span><span class="pill">Statistics</span><span class="pill">Python</span></div>
+    <a class="proj-link" href="https://github.com/Wamuza1/Program_Evaluation" target="_blank"><i class="fab fa-github"></i> GitHub</a>
+  </div>
+  <div class="proj" data-c="ml">
+    <div class="proj-head"><div class="proj-ico ico-blue"><i class="fas fa-bicycle"></i></div><span class="proj-tag">Time Series</span></div>
+    <h4>Bike Rental Demand Forecasting</h4>
+    <p>30-day demand forecast for bike rentals giving operators actionable staffing and supply plans.</p>
+    <div class="proj-pills"><span class="pill">Time Series</span><span class="pill">Pandas</span><span class="pill">Python</span></div>
+    <a class="proj-link" href="https://github.com/Wamuza1/Bike_Rental_Sharing_Analysis" target="_blank"><i class="fab fa-github"></i> GitHub</a>
+  </div>
+  <div class="proj" data-c="ai">
+    <div class="proj-head"><div class="proj-ico ico-purple"><i class="fas fa-brain"></i></div><span class="proj-tag">Deep Learning</span></div>
+    <h4>Neural Network Charity Classifier</h4>
+    <p>TensorFlow binary classifier predicting Alphabet Soup grant success to optimize charitable fund allocation.</p>
+    <div class="proj-pills"><span class="pill">TensorFlow</span><span class="pill">Neural Nets</span><span class="pill">Keras</span></div>
+    <a class="proj-link" href="https://github.com/Wamuza1/Neural_Network_Charity_Analysis" target="_blank"><i class="fab fa-github"></i> GitHub</a>
+  </div>
+  <div class="proj" data-c="ai" style="border-color:rgba(24,71,194,.22)">
+    <div class="proj-head"><div class="proj-ico ico-blue"><i class="fas fa-stethoscope"></i></div><span class="proj-tag">Healthcare AI</span></div>
+    <h4>AI Differential Diagnosis — JHU</h4>
+    <p>AI-powered differential diagnosis system built with Johns Hopkins University MLS, generating ranked clinical decision support.</p>
+    <div class="proj-pills"><span class="pill">Python</span><span class="pill">NLP</span><span class="pill">ML</span><span class="pill">JHU</span></div>
+    <a class="proj-link" href="https://github.com/Wamuza1" target="_blank"><i class="fab fa-github"></i> GitHub</a>
+  </div>
+  <!--
+  ── ADD NEW PROJECT ──────────────────────────────────────
+  <div class="proj" data-c="ml">
+    <div class="proj-head">
+      <div class="proj-ico ico-blue"><i class="fas fa-star"></i></div>
+      <span class="proj-tag">Category</span>
     </div>
-   
-    <!-- Skills -->
-    <section class="skills">
-        <h1 class="skill-heading">Technical Skills</h1>
-        <span class="skill-subheading"><b>Languages: Python, R, JavaScript ES6+, HTML, CSS, SQL, NoSQL
-            <br><br>Applications: GitHub, MongoDB, MySQL, PostgreSQL, AWS, Flask, Command Line, Tableau</br> </br>
-            Tools: Excel, Sqlalchemy, Scikit learn, Databasing, Pandas, Numpy, Jupyter Notebook</b>
-            </span>
-    
-         <!-- image-->
-   
-            <div class="skill-img">
-                <b> <img src="assets\images\code_image.png" alt="code" width="350" height="245"></b>
-            </div>
-        </div>
-   
-    </section>
-
-    <!-- EDUCATION -->
-    <section class="container education-container">
-        <h1 class="title">Education </h1>
-        <article class="education-item">
-            <h3 class="subtitle">Bachelor Degree</h3>
-            <span class="text-muted">Business Administration (BBA) in Data Analytics( 2024)</span></br>
-            <span class="text-muted">Rutgers University, New Jersey</span>
-        </article>
-        <hr />
-        <article class="education-item">
-            <h3 class="subtitle">BBDS Data Science and Machine Learning Certificate</h3>
-            <span class="text-muted">Big Bang Data Science</span>
-        </article>
-        <article class="education-item">
-            <h3 class="subtitle"> Data Science Certificate </h3>
-            <span class="text-muted">Rutgers University, New Jersey</span>
-        </article>
-        <hr />
-        <article class="education-item">
-            <h3 class="subtitle">2 Associate Degree  </h3>
-            <span class="text-muted">Business Administration and </span>
-            <span class="text-muted">Business Information Systems(Dean's List) <br>Middlesex College, New Jersey</br>  </span>
-         </article>
-        <hr />
-
-    </section>
-
-    <!-- AVAILABLE FOR WORK -->
-    <section class="container-color">
-        <div class="container">
-            <h1 class="title">I'm working full-time.
-            </h1>
-            <h3 class="subtitle">Actively contributing to
-                 new Projects.
-                </h3>
-        </div>
-    </section>
-
-    <!-- FOOTER -->
-    <section class="container-dark">
-        <div class="container">
-            <h1>Contact Me</h1>
-            <h3 class="intro subtitle">
-               <!-- <a href="https://twitter.com" class="social-icon"><i class="fab fa-twitter"></i></a> -->
-                <a href="https://www.linkedin.com/in/sabaamin-atta/" class="social-icon"><i class="fab fa-linkedin"></i></a>
-                <a href="https://github.com/Wamuza1" class="social-icon"><i class="fab fa-github"></i></a>
-                <a href="mailto:< onetreesaba@gmail.com>" class="social-icon"><i class="fas fa-envelope"></i></a>
-            </h3>
-        </div>
-    </section>
-
-    <footer>
-        <div class="container">
-            Saba Amin &copy; 
-
-        </div>
-    </footer>
-
-
-    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
-        integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
-        crossorigin="anonymous"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.6/umd/popper.min.js"
-        integrity="sha384-wHAiFfRlMFy6i5SRaxvfOCifBUQy1xHdJ/yoi7FRNXMRBu5WHdZYu1hA6ZOblgut"
-        crossorigin="anonymous"></script>
-    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/js/bootstrap.min.js"
-        integrity="sha384-B0UglyR+jN6CkvvICOB2joaf5I4l3gm9GU6Hc1og6Ls7i6U/mkkaduKaBhlAXv9k"
-        crossorigin="anonymous"></script>
-    <script src="assets/js/app.js"></script>
+    <h4>Project Title</h4>
+    <p>Description.</p>
+    <div class="proj-pills"><span class="pill">Tool</span></div>
+    <a class="proj-link" href="GITHUB_URL" target="_blank"><i class="fab fa-github"></i> GitHub</a>
+  </div>
+  ────────────────────────────────────────────────────── -->
+</div>
+ 
+<!-- EDUCATION -->
+<div id="education" class="section-hdr reveal"><h2>Education</h2></div>
+<div class="edu-grid reveal">
+  <div class="edu-card featured">
+    <div class="edu-year">2025 · IN PROGRESS</div>
+    <h4>Generative &amp; Agentic AI Program</h4>
+    <span>Johns Hopkins University</span>
+    <span class="badge badge-now">Currently Enrolled</span>
+  </div>
+  <div class="edu-card">
+    <div class="edu-year">2024</div>
+    <h4>B.B.A. — Business Administration, Data Analytics</h4>
+    <span>Rutgers University, New Jersey</span>
+  </div>
+  <div class="edu-card">
+    <div class="edu-year">Certificate</div>
+    <h4>Data Science &amp; ML Certificate</h4>
+    <span>Rutgers University, New Jersey</span>
+  </div>
+  <div class="edu-card">
+    <div class="edu-year">Certificate</div>
+    <h4>BBDS Data Science &amp; ML Certificate</h4>
+    <span>Big Bang Data Science</span>
+  </div>
+  <div class="edu-card">
+    <div class="edu-year">Associate</div>
+    <h4>Business Administration</h4>
+    <span>Middlesex College, New Jersey</span>
+    <span class="badge badge-dl">Dean's List</span>
+  </div>
+  <div class="edu-card">
+    <div class="edu-year">Associate</div>
+    <h4>Business Information Systems</h4>
+    <span>Middlesex College, New Jersey</span>
+    <span class="badge badge-dl">Dean's List</span>
+  </div>
+</div>
+ 
+<!-- CONTACT -->
+<div id="contact" class="contact-strip reveal">
+  <div class="contact-left">
+    <h2>Let's work together.</h2>
+    <p>Open to Data Scientist, ML Engineer, and AI roles. Based in New Jersey — open to remote opportunities.</p>
+  </div>
+  <div class="contact-btns">
+    <a class="btn btn-solid" href="mailto:onetreesaba@gmail.com"><i class="fas fa-envelope"></i> Email Me</a>
+    <a class="btn btn-outline" href="https://www.linkedin.com/in/sabaamin-atta/" target="_blank"><i class="fab fa-linkedin"></i> LinkedIn</a>
+    <a class="btn btn-outline" href="https://github.com/Wamuza1" target="_blank"><i class="fab fa-github"></i> GitHub</a>
+  </div>
+</div>
+ 
+</div>
+ 
+<footer>Saba Amin &copy; <span id="yr"></span> &nbsp;·&nbsp; Data Scientist &amp; ML Engineer</footer>
+ 
+<script>
+document.getElementById('yr').textContent = new Date().getFullYear();
+ 
+document.querySelectorAll('.filt').forEach(btn => {
+  btn.addEventListener('click', () => {
+    document.querySelectorAll('.filt').forEach(b => b.classList.remove('on'));
+    btn.classList.add('on');
+    const f = btn.dataset.f;
+    document.querySelectorAll('.proj').forEach(p => {
+      p.classList.toggle('hide', f !== 'all' && p.dataset.c !== f);
+    });
+  });
+});
+ 
+const io = new IntersectionObserver(entries => {
+  entries.forEach(e => { if(e.isIntersecting) e.target.classList.add('in'); });
+}, {threshold:0.07});
+document.querySelectorAll('.reveal').forEach(el => io.observe(el));
+</script>
 </body>
-
 </html>
