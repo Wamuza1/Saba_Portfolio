@@ -189,7 +189,82 @@ nav{
   color:var(--ink2);border:1px solid var(--border);
 }
 
-/* SECTION HEADER */
+/* GENERATIVE AI SECTION */
+.genai-section{
+  background:linear-gradient(135deg,#0f1f6e 0%,#1847c2 45%,#6236e0 100%);
+  border-radius:26px;padding:52px 48px;margin-bottom:18px;
+  position:relative;overflow:hidden;
+}
+.genai-section::before{
+  content:'';position:absolute;inset:0;
+  background-image:radial-gradient(rgba(255,255,255,.06) 1px,transparent 1px);
+  background-size:24px 24px;pointer-events:none;
+}
+.genai-section::after{
+  content:'';position:absolute;right:-80px;bottom:-80px;
+  width:340px;height:340px;
+  background:radial-gradient(circle,rgba(255,255,255,.07) 0%,transparent 65%);
+  border-radius:50%;pointer-events:none;
+}
+.genai-header{text-align:center;margin-bottom:36px;position:relative;z-index:1}
+.genai-badge{
+  display:inline-flex;align-items:center;gap:7px;
+  font-family:'Fira Code',monospace;font-size:.72rem;
+  color:#fff;background:rgba(255,255,255,.15);
+  border:1px solid rgba(255,255,255,.25);
+  border-radius:99px;padding:.28rem 1rem;margin-bottom:14px;
+}
+.genai-header h2{
+  font-family:'Playfair Display',serif;
+  font-size:clamp(1.8rem,3.5vw,2.8rem);
+  font-weight:900;color:#fff;margin-bottom:10px;
+}
+.genai-header p{
+  font-size:.92rem;color:rgba(255,255,255,.7);
+  max-width:520px;margin:0 auto;line-height:1.75;
+}
+.genai-grid{
+  display:grid;
+  grid-template-columns:repeat(auto-fill,minmax(300px,1fr));
+  gap:16px;position:relative;z-index:1;
+}
+.genai-card{
+  background:rgba(255,255,255,.1);
+  backdrop-filter:blur(10px);
+  border:1px solid rgba(255,255,255,.18);
+  border-radius:18px;padding:26px;
+  display:flex;flex-direction:column;gap:11px;
+  transition:transform .2s,background .2s,box-shadow .2s;
+}
+.genai-card:hover{
+  transform:translateY(-4px);
+  background:rgba(255,255,255,.16);
+  box-shadow:0 16px 40px rgba(0,0,0,.25);
+}
+.genai-card-top{display:flex;justify-content:space-between;align-items:flex-start}
+.genai-ico{
+  width:44px;height:44px;border-radius:12px;
+  background:rgba(255,255,255,.18);
+  display:flex;align-items:center;justify-content:center;
+  font-size:1.1rem;color:#fff;
+}
+.genai-tag{
+  font-family:'Fira Code',monospace;font-size:.62rem;
+  letter-spacing:.08em;text-transform:uppercase;
+  color:rgba(255,255,255,.6);background:rgba(255,255,255,.1);
+  border:1px solid rgba(255,255,255,.18);border-radius:99px;
+  padding:.2rem .65rem;
+}
+.genai-card h4{
+  font-family:'Playfair Display',serif;
+  font-size:1.08rem;color:#fff;line-height:1.25;
+}
+.genai-card p{font-size:.83rem;color:rgba(255,255,255,.75);line-height:1.75;flex:1}
+.genai-card .pill{background:rgba(255,255,255,.12);color:rgba(255,255,255,.85);border-color:rgba(255,255,255,.15)}
+.genai-card .proj-link{color:rgba(255,255,255,.85)}
+.genai-card .proj-link:hover{color:#fff;opacity:1}
+
+
 .section-hdr{display:flex;align-items:center;gap:16px;margin-bottom:18px}
 .section-hdr h2{font-family:'Playfair Display',serif;font-size:1.85rem;font-weight:700;color:var(--ink)}
 .filter-strip{margin-left:auto;display:flex;gap:6px;flex-wrap:wrap}
@@ -321,7 +396,37 @@ footer{text-align:center;padding:30px;font-family:'Fira Code',monospace;font-siz
   </div>
 </div>
 
-<!-- ABOUT BENTO -->
+<!-- GENERATIVE & AGENTIC AI SECTION -->
+<div class="genai-section reveal">
+  <div class="genai-header">
+    <div class="genai-badge"><i class="fas fa-microchip"></i> Johns Hopkins University</div>
+    <h2>Generative &amp; Agentic AI</h2>
+    <p>Projects built through the JHU Generative and Agentic AI Program — exploring LLMs, autonomous agents, and production AI systems.</p>
+  </div>
+  <div class="genai-grid">
+
+    <div class="genai-card">
+      <div class="genai-card-top">
+        <div class="genai-ico"><i class="fas fa-envelope-open-text"></i></div>
+        <span class="genai-tag">Midterm Project</span>
+      </div>
+      <h4>AI-Powered Email Management System</h4>
+      <p>LLM system that auto-categorizes emails into six priority levels, generates executive summaries, flags urgent items with next steps, and drafts professional replies. Includes an LLM-as-a-Judge evaluation framework scoring relevance, clarity, and actionability.</p>
+      <div class="proj-pills" style="margin-top:auto;padding-top:12px">
+        <span class="pill">Prompt Engineering</span>
+        <span class="pill">LLM</span>
+        <span class="pill">Python</span>
+        <span class="pill">LLM-as-a-Judge</span>
+      </div>
+      <a class="proj-link" href="https://github.com/Wamuza1" target="_blank"><i class="fab fa-github"></i> GitHub</a>
+    </div>
+
+    <!-- ADD MORE JHU PROJECTS HERE WEEKLY -->
+
+  </div>
+</div>
+
+
 <div id="about" class="bento-row reveal">
   <div class="bento">
     <div class="bento-label">// About Me</div>
@@ -458,8 +563,7 @@ footer{text-align:center;padding:30px;font-family:'Fira Code',monospace;font-siz
     <a class="proj-link" href="https://github.com/Wamuza1/Neural_Network_Charity_Analysis" target="_blank"><i class="fab fa-github"></i> GitHub</a>
   </div>
 
-  <!--
-  ── ADD NEW PROJECT ──────────────────────────────────────
+
   <div class="proj" data-c="ml">
     <div class="proj-head">
       <div class="proj-ico ico-blue"><i class="fas fa-star"></i></div>
@@ -516,7 +620,7 @@ footer{text-align:center;padding:30px;font-family:'Fira Code',monospace;font-siz
 <div id="contact" class="contact-strip reveal">
   <div class="contact-left">
     <h2>Let's work together.</h2>
-    <p>Open to Data Scientist, ML Engineer, and AI roles. Based in New Jersey open to new opportunities.</p>
+    <p>Open to Data Scientist, ML Engineer, and AI roles. Based in New Jersey open to remote opportunities.</p>
     <a href="mailto:onetreesaba@gmail.com" class="contact-email">
       <i class="fas fa-envelope"></i>
       <span>onetreesaba@gmail.com</span>
@@ -537,7 +641,7 @@ footer{text-align:center;padding:30px;font-family:'Fira Code',monospace;font-siz
 document.getElementById('yr').textContent = new Date().getFullYear();
 
 // Typing animation
-const roles = ['AI Enthusiast','Senior Business Analyst','Data Engineer','Data Analyst','Analytics Advisor'];
+const roles = ['Data Scientist','ML Engineer','AI Engineer','Data Analyst','Business Analyst','Analytics Advisor'];
 let ri=0,ci=0,deleting=false;
 const el=document.getElementById('typed-role');
 function type(){
