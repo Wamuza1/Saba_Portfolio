@@ -8,9 +8,9 @@
 <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,700;0,900;1,700&family=Plus+Jakarta+Sans:wght@300;400;500;600;700&family=Fira+Code:wght@400;500&display=swap" rel="stylesheet"/>
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css" integrity="sha512-z3gLpd7yknf1YoNbCzqRKc4qyor8gaKU1qmn+CShxbuBusANI9QpRohGBreCFkKxLhei6S9CQXFEbbKuqLi0A==" crossorigin="anonymous" referrerpolicy="no-referrer"/>
 <style>
-
-
-
+ 
+ 
+ 
 /* ── 3D TILT ─────────────────────────────────── */
 .proj,.genai-card{transform-style:preserve-3d;will-change:transform}
 .proj .proj-tilt-shine,.genai-card .genai-tilt-shine{
@@ -20,12 +20,12 @@
 }
 .proj{position:relative;overflow:hidden}
 .genai-card{position:relative}
-
-
+ 
+ 
 /* ── MAGNETIC BUTTONS ────────────────────────── */
 .hbtn{display:inline-flex;align-items:center;gap:8px;position:relative;transition:box-shadow .2s}
-
-
+ 
+ 
 /* ── LOADER ──────────────────────────────────── */
 #loader{
   position:fixed;inset:0;z-index:9999;
@@ -52,8 +52,8 @@
 }
 @keyframes loaderPulse{0%,100%{opacity:1;transform:scale(1)}50%{opacity:.7;transform:scale(.97)}}
 @keyframes loaderFill{0%{width:0%}100%{width:100%}}
-
-
+ 
+ 
 /* ── SCROLL PROGRESS BAR ─────────────────────── */
 #scroll-progress{
   position:fixed;top:0;left:0;z-index:9998;
@@ -62,7 +62,7 @@
   transition:width .1s linear;
   box-shadow:0 0 8px rgba(24,71,194,.5);
 }
-
+ 
 /* ── CUSTOM SCROLLBAR ────────────────────────── */
 ::-webkit-scrollbar{width:6px}
 ::-webkit-scrollbar-track{background:transparent}
@@ -71,7 +71,7 @@
   border-radius:99px;
 }
 ::-webkit-scrollbar-thumb:hover{background:linear-gradient(180deg,#0f35a8,#4f2ab8)}
-
+ 
 /* ── BACK TO TOP ─────────────────────────────── */
 #back-top{
   position:fixed;bottom:90px;right:28px;z-index:997;
@@ -86,7 +86,7 @@
 }
 #back-top.show{opacity:1;visibility:visible}
 #back-top:hover{transform:translateY(-3px);box-shadow:0 8px 28px rgba(24,71,194,.45)}
-
+ 
 /* ── FILTER COUNT BADGES ─────────────────────── */
 .filt-count{
   display:inline-flex;align-items:center;justify-content:center;
@@ -96,7 +96,7 @@
   margin-left:4px;transition:all .15s;
 }
 .filt.on .filt-count{background:rgba(255,255,255,.25);color:#fff}
-
+ 
 /* ── COPY EMAIL ───────────────────────────────── */
 .copy-email-wrap{
   display:inline-flex;align-items:center;gap:0;
@@ -120,8 +120,8 @@
 }
 .copy-btn:hover{background:rgba(255,255,255,.25)}
 .copy-btn.copied{background:rgba(74,222,128,.25);color:#4ade80}
-
-
+ 
+ 
 /* ── CURSOR GLOW ─────────────────────────────── */
 .cursor-glow{
   position:fixed;pointer-events:none;z-index:9999;
@@ -132,8 +132,8 @@
   mix-blend-mode:multiply;
 }
 body:not(:hover) .cursor-glow{opacity:0}
-
-
+ 
+ 
 /* ── DARK/LIGHT TOGGLE ───────────────────────── */
 .theme-toggle{
   position:fixed;bottom:28px;right:28px;z-index:998;
@@ -145,7 +145,7 @@ body:not(:hover) .cursor-glow{opacity:0}
   transition:all .2s;
 }
 .theme-toggle:hover{transform:scale(1.1);box-shadow:0 8px 32px rgba(24,71,194,.2)}
-
+ 
 /* dark mode */
 body.dark{
   --white:#181c2e;--off:#1e2340;--off2:#252a42;
@@ -166,7 +166,7 @@ body.dark #about,body.dark #projects{background:#181c2e}
 body.dark #skills,body.dark #education{background:#1e2340}
 body.dark #navbar.scrolled{background:rgba(24,28,46,.95)}
 body.dark .cursor-glow{background:radial-gradient(circle,rgba(147,197,253,.12) 0%,rgba(196,181,253,.06) 40%,transparent 70%)}
-
+ 
 /* ── TOKENS ─────────────────────────────────── */
 :root{
   --ink:#0d0f1c;--ink2:#3a3d52;--muted:#8e92a8;
@@ -184,7 +184,7 @@ html{scroll-behavior:smooth}
 body{font-family:'Plus Jakarta Sans',sans-serif;color:var(--ink);overflow-x:hidden;line-height:1.65}
 a{text-decoration:none}
 img{display:block;max-width:100%}
-
+ 
 /* ── NAV ─────────────────────────────────────── */
 #navbar{
   position:fixed;top:0;left:0;right:0;z-index:999;
@@ -214,7 +214,7 @@ img{display:block;max-width:100%}
 #navbar.scrolled .nav-links a{color:var(--ink2)}
 .nav-links a:hover{background:rgba(255,255,255,.15);color:#fff}
 #navbar.scrolled .nav-links a:hover{background:var(--blue-lt);color:var(--blue)}
-
+ 
 /* ── HERO ────────────────────────────────────── */
 #hero{
   min-height:100vh;
@@ -318,7 +318,7 @@ img{display:block;max-width:100%}
 }
 .scroll-arrow span{font-size:.68rem;color:rgba(255,255,255,.4);font-family:'Fira Code',monospace;letter-spacing:.1em}
 .scroll-arrow i{color:rgba(255,255,255,.4);animation:bounce 1.8s infinite}
-
+ 
 /* ── SECTION BASE ────────────────────────────── */
 section{padding:96px 6vw}
 .wrap{max-width:1140px;margin:0 auto}
@@ -337,7 +337,7 @@ section{padding:96px 6vw}
 }
 .sec-sub{font-size:.95rem;color:var(--muted);max-width:560px;line-height:1.8}
 .sec-divider{width:48px;height:3px;background:linear-gradient(90deg,var(--blue),var(--purple));border-radius:2px;margin:18px 0 48px}
-
+ 
 /* ── GENAI SECTION ───────────────────────────── */
 #genai{
   background:linear-gradient(145deg,#060d2e 0%,#0f1f6e 45%,#6236e0 100%);
@@ -398,7 +398,7 @@ section{padding:96px 6vw}
   margin-top:2px;transition:opacity .15s;
 }
 .genai-link:hover{opacity:.75}
-
+ 
 /* ── WAVE DIVIDER ───────────────────────────────── */
 .wave-divider{
   position:relative;margin-top:-2px;
@@ -406,7 +406,7 @@ section{padding:96px 6vw}
   line-height:0;
 }
 .wave-divider svg{display:block;width:100%}
-
+ 
 /* ── ABOUT ───────────────────────────────────── */
 .about-stats{
   display:grid;grid-template-columns:repeat(4,1fr);
@@ -452,7 +452,7 @@ section{padding:96px 6vw}
 .ico-purple{background:var(--pur-lt);color:var(--purple)}
 .ico-teal{background:var(--teal-lt);color:var(--teal)}
 .ico-green{background:var(--grn-lt);color:var(--green)}
-
+ 
 /* ── SKILLS ──────────────────────────────────── */
 #skills{
   background:#f5f3ef;
@@ -495,7 +495,7 @@ section{padding:96px 6vw}
   padding:.18rem .54rem;background:var(--off2);
   color:var(--ink2);border:1px solid var(--border);
 }
-
+ 
 /* ── PROJECTS ────────────────────────────────── */
 #projects{background:var(--white)}
 .filter-bar{display:flex;gap:8px;flex-wrap:wrap;margin-bottom:36px}
@@ -548,7 +548,7 @@ section{padding:96px 6vw}
 .proj-pills{display:flex;flex-wrap:wrap;gap:5px}
 .proj-link{display:inline-flex;align-items:center;gap:5px;font-size:.8rem;font-weight:600;color:var(--blue)}
 .proj-link:hover{opacity:.75}
-
+ 
 /* ── EDUCATION ───────────────────────────────── */
 #education{background:#f5f3ef}
 .edu-timeline{
@@ -619,7 +619,7 @@ section{padding:96px 6vw}
 .edu-card.featured .edu-year{color:rgba(255,255,255,.55)}
 .edu-card.featured h4{color:#fff}
 .edu-card.featured span{color:rgba(255,255,255,.7)}
-
+ 
 /* ── CONTACT ─────────────────────────────────── */
 #contact{
   background:linear-gradient(145deg,#060d2e 0%,#0f1f6e 50%,#6236e0 100%);
@@ -660,7 +660,7 @@ section{padding:96px 6vw}
   transition:all .2s;
 }
 .clink:hover{background:rgba(255,255,255,.2);transform:translateY(-2px)}
-
+ 
 /* ── FOOTER ──────────────────────────────────── */
 footer{
   background:#060d2e;text-align:center;
@@ -668,7 +668,7 @@ footer{
   font-size:.72rem;color:rgba(255,255,255,.3);
   letter-spacing:.06em;
 }
-
+ 
 /* ── ANIMATIONS ──────────────────────────────── */
 @keyframes gradientShift{
   0%{background-position:0% 50%}
@@ -680,7 +680,7 @@ footer{
 @keyframes bounce{0%,100%{transform:translateY(0)}50%{transform:translateY(6px)}}
 .reveal{opacity:0;transform:translateY(20px);transition:opacity .6s ease,transform .6s ease}
 .reveal.in{opacity:1;transform:translateY(0)}
-
+ 
 /* ── RESPONSIVE ──────────────────────────────── */
 @media(max-width:1024px){
   .skills-grid{grid-template-columns:repeat(3,1fr)}
@@ -699,22 +699,22 @@ footer{
 </style>
 </head>
 <body>
-
+ 
 <!-- NAV -->
 <div id="scroll-progress"></div>
 <button id="back-top" title="Back to top">↑</button>
-
+ 
 <div id="loader">
   <div class="loader-initials">SA</div>
   <div class="loader-bar"><div class="loader-fill"></div></div>
 </div>
-
+ 
 <div class="cursor-glow" id="cursorGlow"></div>
 <button class="theme-toggle" id="themeToggle" title="Toggle theme">🌙</button>
-
+ 
 <nav id="navbar">
 </nav>
-
+ 
 <!-- HERO -->
 <section id="hero">
   <canvas id="hero-canvas"></canvas>
@@ -740,7 +740,7 @@ footer{
     <svg class="arr" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="rgba(255,255,255,.4)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg>
   </div>
 </section>
-
+ 
 <div class="wave-divider">
   <svg viewBox="0 0 1440 80" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="none">
     <path d="M0,40 C240,80 480,0 720,40 C960,80 1200,0 1440,40 L1440,0 L0,0 Z" fill="url(#waveGrad)"/>
@@ -752,7 +752,7 @@ footer{
     </defs>
   </svg>
 </div>
-
+ 
 <!-- GENERATIVE & AGENTIC AI -->
 <section id="genai">
   <div class="wrap">
@@ -761,7 +761,7 @@ footer{
     <p class="sec-sub">Projects built through the JHU Generative and Agentic AI Program — LLMs, autonomous agents, and production AI systems.</p>
     <div class="sec-divider"></div>
     <div class="genai-grid reveal">
-
+ 
       <div class="genai-card">
         <div class="genai-card-top">
           <div class="genai-ico">✉️</div>
@@ -777,7 +777,7 @@ footer{
         </div>
         <a class="genai-link" href="https://wamuza1.github.io/Saba_Portfolio/JHU_AGAI_Mid_Term_Project.html" target="_blank">↗ View Project</a>
       </div>
-
+ 
       <div class="genai-card">
         <div class="genai-card-top">
           <div class="genai-ico">📰</div>
@@ -796,7 +796,7 @@ footer{
         </div>
         <a class="genai-link" href="https://github.com/Wamuza1/News_discovery_Agents" target="_blank"><svg width="15" height="15" viewBox="0 0 24 24" fill="currentColor"><path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0 0 24 12c0-6.63-5.37-12-12-12z"/></svg> GitHub</a>
       </div>
-
+ 
       <!-- ADD NEW JHU PROJECT HERE WEEKLY
       <div class="genai-card">
         <div class="genai-card-top">
@@ -809,7 +809,7 @@ footer{
         <a class="genai-link" href="URL" target="_blank"><svg width="15" height="15" viewBox="0 0 24 24" fill="currentColor"><path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0 0 24 12c0-6.63-5.37-12-12-12z"/></svg> GitHub</a>
       </div>
       -->
-
+ 
     </div>
   </div>
 </section>
@@ -818,7 +818,7 @@ footer{
     <path d="M0,40 C360,0 720,80 1080,40 C1260,20 1380,50 1440,40 L1440,80 L0,80 Z" fill="#fffffe"/>
   </svg>
 </div>
-
+ 
 <!-- ABOUT -->
 <section id="about">
   <div class="wrap">
@@ -870,8 +870,8 @@ footer{
     <path d="M0,30 C480,60 960,0 1440,30 L1440,60 L0,60 Z" fill="#f5f3ef"/>
   </svg>
 </div>
-
-
+ 
+ 
 <!-- SKILLS -->
 <section id="skills">
   <div class="wrap">
@@ -922,7 +922,7 @@ footer{
     <path d="M0,20 C360,60 1080,0 1440,40 L1440,60 L0,60 Z" fill="#fffffe"/>
   </svg>
 </div>
-
+ 
 <!-- PROJECTS -->
 <section id="projects">
   <div class="wrap">
@@ -1022,7 +1022,7 @@ footer{
     <path d="M0,40 C360,0 1080,60 1440,20 L1440,60 L0,60 Z" fill="#f5f3ef"/>
   </svg>
 </div>
-
+ 
 <!-- EDUCATION -->
 <section id="education">
   <div class="wrap">
@@ -1030,7 +1030,7 @@ footer{
     <h2 class="sec-title">Education</h2>
     <div class="sec-divider"></div>
     <div class="edu-timeline reveal">
-
+ 
       <div class="edu-item">
         <div class="edu-dot active"></div>
         <div class="edu-body featured-edu">
@@ -1040,7 +1040,7 @@ footer{
           <span class="badge" style="background:rgba(255,255,255,.18);color:#fff;border:1px solid rgba(255,255,255,.25);margin-top:6px;display:inline-block">Currently Enrolled</span>
         </div>
       </div>
-
+ 
       <div class="edu-item">
         <div class="edu-dot"></div>
         <div class="edu-body">
@@ -1050,7 +1050,7 @@ footer{
           <span class="badge badge-dl" style="margin-top:6px;display:inline-block">Dean's List</span>
         </div>
       </div>
-
+ 
       <div class="edu-item">
         <div class="edu-dot"></div>
         <div class="edu-body">
@@ -1059,7 +1059,7 @@ footer{
           <span class="edu-inst">Rutgers University, New Jersey</span>
         </div>
       </div>
-
+ 
       <div class="edu-item">
         <div class="edu-dot"></div>
         <div class="edu-body">
@@ -1068,7 +1068,7 @@ footer{
           <span class="edu-inst">Big Bang Data Science</span>
         </div>
       </div>
-
+ 
       <div class="edu-item">
         <div class="edu-dot"></div>
         <div class="edu-body">
@@ -1078,11 +1078,11 @@ footer{
           <span class="badge badge-dl" style="margin-top:6px;display:inline-block">Dean's List</span>
         </div>
       </div>
-
+ 
     </div>
   </div>
 </section>
-
+ 
 <!-- CONTACT -->
 <section id="contact">
   <div class="contact-inner">
@@ -1100,9 +1100,9 @@ footer{
     </div>
   </div>
 </section>
-
+ 
 <footer>Saba Amin &copy; <span id="yr"></span> &nbsp;·&nbsp; Data Scientist &amp; ML Engineer</footer>
-
+ 
 <script>
 // Particle canvas
 const canvas = document.getElementById('hero-canvas');
@@ -1144,28 +1144,28 @@ function drawParticles(){
   requestAnimationFrame(drawParticles);
 }
 drawParticles();
-
+ 
 document.getElementById('yr').textContent = new Date().getFullYear();
-
+ 
 // Cursor glow
 const glow = document.getElementById('cursorGlow');
 document.addEventListener('mousemove', e => {
   glow.style.left = e.clientX + 'px';
   glow.style.top = e.clientY + 'px';
 });
-
+ 
 // Dark/Light toggle
 const toggle = document.getElementById('themeToggle');
 toggle.addEventListener('click', () => {
   document.body.classList.toggle('dark');
   toggle.textContent = document.body.classList.contains('dark') ? '☀️' : '🌙';
 });
-
+ 
 // Navbar scroll effect
 window.addEventListener('scroll', () => {
   document.getElementById('navbar').classList.toggle('scrolled', window.scrollY > 60);
 });
-
+ 
 // Typing animation
 const roles = ['Data Scientist','ML Engineer','AI Engineer','Data Analyst','Business Analyst','Analytics Advisor'];
 let ri=0,ci=0,deleting=false;
@@ -1178,12 +1178,12 @@ function type(){
   setTimeout(type,deleting?55:90);
 }
 type();
-
+ 
 // Default AI filter on load
 document.querySelectorAll('.proj').forEach(p => {
   if(p.dataset.c !== 'ai') p.classList.add('hide');
 });
-
+ 
 // Filter buttons
 document.querySelectorAll('.filt').forEach(btn => {
   btn.addEventListener('click', () => {
@@ -1195,14 +1195,14 @@ document.querySelectorAll('.filt').forEach(btn => {
     });
   });
 });
-
+ 
 // Scroll reveal
 const io = new IntersectionObserver(entries => {
   entries.forEach(e => { if(e.isIntersecting) e.target.classList.add('in'); });
 }, {threshold:0.07});
 document.querySelectorAll('.reveal').forEach(el => io.observe(el));
-
-
+ 
+ 
 // ── SCROLL PROGRESS BAR
 const progressBar = document.getElementById('scroll-progress');
 const backTop = document.getElementById('back-top');
@@ -1213,7 +1213,7 @@ window.addEventListener('scroll', () => {
   backTop.classList.toggle('show', scrolled > 400);
 });
 backTop.addEventListener('click', () => window.scrollTo({top:0,behavior:'smooth'}));
-
+ 
 // ── COPY EMAIL
 function copyEmail(){
   navigator.clipboard.writeText('onetreesaba@gmail.com').then(() => {
@@ -1226,12 +1226,12 @@ function copyEmail(){
     }, 2000);
   });
 }
-
+ 
 // ── LOADER
 setTimeout(() => {
   document.getElementById('loader').classList.add('hide');
 }, 1500);
-
+ 
 // ── TEXT SCRAMBLE on hero name
 const scrambleEl = document.querySelector('.hero-name');
 const originalHTML = scrambleEl.innerHTML;
@@ -1259,14 +1259,14 @@ function scramble(el, finalHTML, duration=1200){
   }, 30);
 }
 setTimeout(() => scramble(scrambleEl, originalHTML, 1400), 1600);
-
+ 
 // ── 3D TILT on cards
 document.querySelectorAll('.proj, .genai-card').forEach(card => {
   // add shine div
   const shine = document.createElement('div');
   shine.className = card.classList.contains('proj') ? 'proj-tilt-shine' : 'genai-tilt-shine';
   card.appendChild(shine);
-
+ 
   card.addEventListener('mousemove', e => {
     const r = card.getBoundingClientRect();
     const x = e.clientX - r.left;
@@ -1284,7 +1284,7 @@ document.querySelectorAll('.proj, .genai-card').forEach(card => {
     shine.style.opacity = '0';
   });
 });
-
+ 
 // ── MAGNETIC BUTTONS
 document.querySelectorAll('.hbtn').forEach(btn => {
   btn.addEventListener('mousemove', e => {
@@ -1297,9 +1297,9 @@ document.querySelectorAll('.hbtn').forEach(btn => {
     btn.style.transform = '';
   });
 });
-
+ 
 // ── ANIMATED COUNTERS (scroll triggered) — future use
-
+ 
 </script>
 </body>
 </html>
